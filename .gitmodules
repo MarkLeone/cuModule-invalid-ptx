@@ -1,0 +1,6 @@
+[submodule "CMake"]
+	path = CMake
+	url = https://github.com/NVIDIA/otk-cmake.git
+[submodule "DemandLoading"]
+	path = DemandLoading
+	url = https://github.com/NVIDIA/otk-demand-loading.git
