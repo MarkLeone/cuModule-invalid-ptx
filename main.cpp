@@ -5,8 +5,6 @@
 #include <exception>
 #include <cstdio>
 
-// XXX void launchTestKernel( unsigned int count );
-
 #define CUDA_CHECK( call ) cudaCheck( call, #call, __FILE__, __LINE__ )
 
 void cudaCheck( CUresult result, const char* expr, const char* file, unsigned int line )
@@ -29,13 +27,6 @@ int main()
 
     CUmodule module;
     CUDA_CHECK( cuModuleLoad( &module, PTX_FILENAME ) );
-
-#if 0
-    launchTestKernel( 32 );    
-    cudaError_t cudaerr = cudaDeviceSynchronize();
-    if( cudaerr != cudaSuccess )
-        printf( "kernel launch failed with error \"%s\".\n", cudaGetErrorString( cudaerr ) );
-#endif
 
     return 0;
 }
